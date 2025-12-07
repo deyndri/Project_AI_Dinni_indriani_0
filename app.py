@@ -1,3 +1,4 @@
+%%writefile app.py
 
 #file app
 # Import semuanya dulu
@@ -5,7 +6,7 @@ import streamlit as st
 from bot import build_agent
 
 # Judul
-st.title("Telor Kucing")
+st.title("The Doctor Telor Kucing")
 
 # Session state
 if "agent" not in st.session_state:
@@ -40,11 +41,11 @@ if user_input is not None:
     "content": user_input,
   })
 
-  with st.chat_message("user"):
+  with st.chat_message("User"):
     st.markdown(user_input)
 
 
-  with st.spinner("Thinking.."):
+  with st.spinner("Wait a Sec Meow..."):
     ai_output = ""
 
     for step in agent.stream({"input": user_input}):
