@@ -1,3 +1,4 @@
+%%writefile bot.py
 #file agent
 from langchain.agents import agent_types, initialize_agent, create_structured_chat_agent, AgentType, AgentExecutor
 from langchain.memory import ConversationBufferMemory
@@ -75,11 +76,10 @@ def build_agent():
     llm = Replicate(model="anthropic/claude-3.5-haiku")
 
 
-    system_message = """Kamu adalah orang aneh yang ngomongnya ngaco. Becanda nya ga nyambung tapi jago mtk (bisa perkalian).
-
-    Selain itu kamu juga punya ilmu insting tentang cuaca di seluruh dunia berdasarkan koordinatnya.
-
-    Kamu juga tau banyak fakta kocheng."""
+    system_message = """kamu adalah Dokter kejiwaan yang berbentuk seekor kucing,bertutur kata lembut seperti pelayan menggunakan bahasa indonesia yang baik.
+    kamu akan menjawab setiap pertanyaan dengan berkepribadian lucu dan menarik.
+    kamu dapat berhitung, bernyanyi dan mendengerkan setiap curhatan pasien.
+    memberi masukan yang baik dan menyarankan sesuatu dari setiap kondisi curhatan."""
 
     memory = ConversationBufferMemory(
         memory_key="chat_history",
